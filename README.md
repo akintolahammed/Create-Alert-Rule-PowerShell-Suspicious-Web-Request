@@ -51,7 +51,7 @@ DeviceProcessEvents
 
 5. Verify payload detection. ✅
 ```kql
-   let TargetHostname = "windows-target-1"; // Replace with the name of your VM as it shows up in the logs
+   let TargetHostname = "windows-hammed"; // Replace with the name of your VM as it shows up in the logs
 let ScriptNames = dynamic(["eicar.ps1", "exfiltratedata.ps1", "portscan.ps1", "pwncrypt.ps1"]); // Add the name of the scripts that were downloaded
 DeviceProcessEvents
 | where DeviceName == TargetHostname // Comment this line out for MORE results
@@ -62,7 +62,8 @@ DeviceProcessEvents
 | summarize Count = count() by AccountName, DeviceName, FileName, ProcessCommandLine
 ```
 
-![Screenshot 2025-01-07 144444](https://github.com/user-attachments/assets/9520d3df-b646-4ce6-a72e-52e1eaedc3f4)
+<img width="473" alt="image" src="https://github.com/user-attachments/assets/6996832a-615b-4a8d-aa21-b69262010406" />
+
 
 
 #### 2️⃣ **Create Alert Rule in Microsoft Sentinel**
