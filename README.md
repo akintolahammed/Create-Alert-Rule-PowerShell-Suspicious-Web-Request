@@ -40,13 +40,14 @@ DeviceProcessEvents
 3. Locate suspicious activity, e.g., `powershell.exe` executing `Invoke-WebRequest`.
 4. Refine query for target device:
    ```kql
-   let TargetDevice = "windows-target-1";
+   let TargetDevice = "windows-hammed";
    DeviceProcessEvents
    | where DeviceName == TargetDevice
    | where FileName == "powershell.exe"
    | where ProcessCommandLine contains "Invoke-WebRequest"
    ```
-![Screenshot 2025-01-07 105629](https://github.com/user-attachments/assets/418f503e-ebab-4cb4-9541-8c1c30ccc56a)
+<img width="716" alt="image" src="https://github.com/user-attachments/assets/543d39cf-3bd6-49ff-9cd0-3ff11f0d1b28" />
+
 
 5. Verify payload detection. ✅
 ```kql
@@ -88,7 +89,8 @@ DeviceProcessEvents
 4. Enable **Mitre ATT&CK Framework Categories** (Use ChatGPT to assist! 🤖).
 5. Save and activate the rule. 🎉
 
-![Screenshot 2025-01-07 131945](https://github.com/user-attachments/assets/2cb640e9-9471-4439-a545-e3395bd2fd16)
+<img width="956" alt="image" src="https://github.com/user-attachments/assets/316bb35b-4a0e-4c1a-a71d-17f779a7eac5" />
+
 
 
 ---
@@ -104,7 +106,8 @@ Follow the **NIST 800-161: Incident Response Lifecycle**:
 1. **Validate Incident**:
    - Assign it to yourself and set the status to **Active** ✅.
 
-![Screenshot 2025-01-07 135609](https://github.com/user-attachments/assets/f1c4ba25-0a90-4924-86b9-1e87f25031f6)
+<img width="670" alt="image" src="https://github.com/user-attachments/assets/1dfc00a7-180d-42ae-83e1-7b800373f220" />
+
 
 2. **Investigate**:
    - Review logs and entity mappings 🗒️.
